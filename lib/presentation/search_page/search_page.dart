@@ -6,7 +6,7 @@ import 'package:flutter/material.dart';
 import 'package:mumshad_s_application5/core/app_export.dart';
 
 class SearchPage extends StatelessWidget {
-  SearchController controller = Get.put(SearchController(SearchModel().obs));
+  final SSearchController controller = Get.put(SSearchController(SearchModel().obs));
 
   @override
   Widget build(BuildContext context) {
