@@ -334,12 +334,12 @@ class SignupScreen extends GetWidget<SignupController> {
   }
 
   onTapCreateanaccountOne() async {
+
+    if(controller.nameController.text==""){
+
+    }
     await controller.saveUserData();
-    Get.snackbar(
-        'Login',
-        'User Already Added',
-        snackPosition: SnackPosition.BOTTOM
-    );
+
   }
 
   onTapTxtAlreadyhavean() {

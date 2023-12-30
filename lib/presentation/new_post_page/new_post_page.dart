@@ -59,7 +59,32 @@ class NewPostPage extends StatelessWidget {
                             margin: getMargin(left: 28, top: 14, right: 28),
                             variant: TextFormFieldVariant.FillGray10001,
                             padding: TextFormFieldPadding.PaddingT31,
-                            textInputAction: TextInputAction.done)])),
+                            textInputAction: TextInputAction.done),
+                        Padding(
+                            padding: getPadding(top: 21),
+                            child: Row(children: [
+                              CustomIconButton(
+                                  height: 38,
+                                  width: 38,
+                                  variant:
+                                  IconButtonVariant.FillGray900,
+                                  child: CustomImageView(
+                                      svgPath: ImageConstant
+                                          .imgSettings)),
+                              Padding(
+                                  padding: getPadding(
+                                      left: 18,
+                                      top: 10,
+                                      bottom: 10),
+                                  child: Text("lbl_add_photo".tr,
+                                      overflow:
+                                      TextOverflow.ellipsis,
+                                      textAlign: TextAlign.left,
+                                      style:
+                                      AppStyle.txtInterBold14))
+                            ])),
+
+                      ])),
             )));
   }
 

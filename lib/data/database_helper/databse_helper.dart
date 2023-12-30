@@ -61,13 +61,13 @@ class DataBaseHelper {
 
 
 
-  Future<bool> isDataExists(String columnName, String value) async {
+  Future<int?> isDataExists(String columnName, String value) async {
     Database? db = await instance.database;
     var res = await db?.rawQuery(
-        "SELECT COUNT(*) FROM user WHERE firstname = ?", [value]);
+        "SELECT COUNT(*) FROM user WHERE email = ?", [value]);
     int? count = Sqflite.firstIntValue(res!);
     print("Count >> $count");
-    return count! > 0;
+    return count;
   }
 
 
