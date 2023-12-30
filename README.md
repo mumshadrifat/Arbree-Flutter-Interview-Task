@@ -17,30 +17,7 @@
 Dart SDK Version 2.18.0 or greater.
 Flutter SDK Version 3.3.0 or greater.
 
-### Figma design guidelines for better UI accuracy
 
-Read our guidelines to increase the accuracy of design-to-code conversion by optimizing Figma designs.
-https://docs.dhiwise.com/docs/Designguidelines/intro
-
-### Check the UI of the entire app
-
-Check the UI of all the app screens from a single place by setting up the 'initialRoute'  to AppNavigation in the AppRoutes.dart file.
-
-### Facebook authentication configuration
-
-Steps:
-- Follow the steps on https://pub.dev/packages/flutter_login_facebook for Facebook login and only update app_id and client_token in your project.
-- For Android:
-    - Update facebook_app_id and facebook_client_token in /android/app/src/main/res/values/strings.xml  file.
-- For iOS:
-    - Configure Info.plist (ios/Runner/Info.plist) file and update APP_ID and CLIENT_TOKEN.
-
-### Google authentication configuration
-
-Steps:
-- Follow the steps on https://pub.dev/packages/google_sign_in for Google sign-in.
-- For iOS:
-    - Download the GoogleService-Info.plist  file. Drag and drop the downloaded file into the Runner subfolder and update Info.plist  file.
 
 ### Application structure
 
