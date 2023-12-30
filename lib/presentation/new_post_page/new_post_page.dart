@@ -16,7 +16,7 @@ class NewPostPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return SafeArea(
         child: Scaffold(
-            resizeToAvoidBottomInset: false,
+            resizeToAvoidBottomInset: true,
             backgroundColor: ColorConstant.whiteA700,
             appBar: CustomAppBar(
                 height: getVerticalSize(70),
@@ -46,158 +46,21 @@ class NewPostPage extends StatelessWidget {
                           child: CustomImageView(
                               svgPath: ImageConstant.imgCheckmark18x18)))
                 ]),
-            body: Container(
-                width: double.maxFinite,
-                child: Column(
-                    mainAxisAlignment: MainAxisAlignment.start,
-                    children: [
-                      CustomTextFormField(
-                          focusNode: FocusNode(),
-                          controller: controller.languageController,
-                          hintText: "msg_what_are_you_th".tr,
-                          margin: getMargin(left: 28, top: 14, right: 28),
-                          variant: TextFormFieldVariant.FillGray10001,
-                          padding: TextFormFieldPadding.PaddingT31,
-                          textInputAction: TextInputAction.done),
-                      Spacer(),
-                      Container(
-                          width: double.maxFinite,
-                          child: Container(
-                              width: double.maxFinite,
-                              padding: getPadding(
-                                  left: 28, top: 22, right: 28, bottom: 22),
-                              decoration: AppDecoration.fillGray100.copyWith(
-                                  borderRadius:
-                                      BorderRadiusStyle.customBorderTL32),
-                              child: Column(
-                                  mainAxisSize: MainAxisSize.min,
-                                  crossAxisAlignment: CrossAxisAlignment.start,
-                                  mainAxisAlignment: MainAxisAlignment.start,
-                                  children: [
-                                    CustomImageView(
-                                        svgPath:
-                                            ImageConstant.imgIndicatoronlight,
-                                        height: getVerticalSize(5),
-                                        width: getHorizontalSize(38),
-                                        alignment: Alignment.center),
-                                    Padding(
-                                        padding: getPadding(top: 21),
-                                        child: Row(children: [
-                                          CustomIconButton(
-                                              height: 38,
-                                              width: 38,
-                                              variant:
-                                                  IconButtonVariant.FillGray900,
-                                              child: CustomImageView(
-                                                  svgPath: ImageConstant
-                                                      .imgSettings)),
-                                          Padding(
-                                              padding: getPadding(
-                                                  left: 18,
-                                                  top: 10,
-                                                  bottom: 10),
-                                              child: Text("lbl_add_photo".tr,
-                                                  overflow:
-                                                      TextOverflow.ellipsis,
-                                                  textAlign: TextAlign.left,
-                                                  style: AppStyle
-                                                      .txtInterBold14Gray900))
-                                        ])),
-                                    Padding(
-                                        padding: getPadding(top: 28),
-                                        child: Row(children: [
-                                          CustomIconButton(
-                                              height: 38,
-                                              width: 38,
-                                              variant:
-                                                  IconButtonVariant.FillGray900,
-                                              child: CustomImageView(
-                                                  svgPath: ImageConstant
-                                                      .imgVideocamera)),
-                                          Padding(
-                                              padding: getPadding(
-                                                  left: 18,
-                                                  top: 10,
-                                                  bottom: 10),
-                                              child: Text("lbl_add_video".tr,
-                                                  overflow:
-                                                      TextOverflow.ellipsis,
-                                                  textAlign: TextAlign.left,
-                                                  style: AppStyle
-                                                      .txtInterBold14Gray900))
-                                        ])),
-                                    Padding(
-                                        padding: getPadding(top: 28),
-                                        child: Row(children: [
-                                          CustomIconButton(
-                                              height: 38,
-                                              width: 38,
-                                              variant:
-                                                  IconButtonVariant.FillGray900,
-                                              onTap: () {
-                                                onTapBtnCamera();
-                                              },
-                                              child: CustomImageView(
-                                                  svgPath: ImageConstant
-                                                      .imgCamera18x18)),
-                                          Padding(
-                                              padding: getPadding(
-                                                  left: 18, top: 11, bottom: 9),
-                                              child: Text("lbl_tag_a_friend".tr,
-                                                  overflow:
-                                                      TextOverflow.ellipsis,
-                                                  textAlign: TextAlign.left,
-                                                  style: AppStyle
-                                                      .txtInterBold14Gray900))
-                                        ])),
-                                    Padding(
-                                        padding: getPadding(top: 28),
-                                        child: Row(children: [
-                                          CustomIconButton(
-                                              height: 38,
-                                              width: 38,
-                                              variant:
-                                                  IconButtonVariant.FillGray900,
-                                              child: CustomImageView(
-                                                  svgPath:
-                                                      ImageConstant.imgMenu)),
-                                          Padding(
-                                              padding: getPadding(
-                                                  left: 18,
-                                                  top: 10,
-                                                  bottom: 10),
-                                              child: Text(
-                                                  "msg_write_an_articl".tr,
-                                                  overflow:
-                                                      TextOverflow.ellipsis,
-                                                  textAlign: TextAlign.left,
-                                                  style: AppStyle
-                                                      .txtInterBold14Gray900))
-                                        ])),
-                                    Padding(
-                                        padding:
-                                            getPadding(top: 28, bottom: 128),
-                                        child: Row(children: [
-                                          CustomIconButton(
-                                              height: 38,
-                                              width: 38,
-                                              variant: IconButtonVariant
-                                                  .OutlineGray50066,
-                                              child: CustomImageView(
-                                                  svgPath: ImageConstant
-                                                      .imgOverflowmenu1)),
-                                          Padding(
-                                              padding: getPadding(
-                                                  left: 18, top: 11, bottom: 9),
-                                              child: Text("lbl_more_options".tr,
-                                                  overflow:
-                                                      TextOverflow.ellipsis,
-                                                  textAlign: TextAlign.left,
-                                                  style: AppStyle
-                                                      .txtInterBold14Gray900))
-                                        ]))
-                                  ])))
-                    ]))));
+            body: SingleChildScrollView(
+              child: Container(
+                  width: double.maxFinite,
+                  child: Column(
+                      mainAxisAlignment: MainAxisAlignment.start,
+                      children: [
+                        CustomTextFormField(
+                            focusNode: FocusNode(),
+                            controller: controller.languageController,
+                            hintText: "msg_what_are_you_th".tr,
+                            margin: getMargin(left: 28, top: 14, right: 28),
+                            variant: TextFormFieldVariant.FillGray10001,
+                            padding: TextFormFieldPadding.PaddingT31,
+                            textInputAction: TextInputAction.done)])),
+            )));
   }
 
   onTapBtnCamera() async {

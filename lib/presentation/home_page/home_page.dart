@@ -36,210 +36,213 @@ class HomePage extends StatelessWidget {
                           getMargin(left: 28, top: 15, right: 28, bottom: 15))
                 ],
                 styleType: Style.bgFillWhiteA700),
-            body: Container(
-                width: double.maxFinite,
-                child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    mainAxisAlignment: MainAxisAlignment.start,
-                    children: [
-                      Padding(
-                          padding: getPadding(left: 28, top: 16),
-                          child: Text("lbl_featured".tr,
-                              overflow: TextOverflow.ellipsis,
-                              textAlign: TextAlign.left,
-                              style: AppStyle.txtInterBold16)),
-                      Align(
-                          alignment: Alignment.centerRight,
-                          child: SingleChildScrollView(
-                              scrollDirection: Axis.horizontal,
-                              padding: getPadding(left: 28, top: 15),
-                              child: IntrinsicWidth(
-                                  child: Row(
-                                      mainAxisAlignment:
-                                          MainAxisAlignment.center,
-                                      children: [
-                                    CustomIconButton(
-                                        height: 49,
-                                        width: 48,
-                                        variant: IconButtonVariant
-                                            .OutlineBluegray2003f,
-                                        padding: IconButtonPadding.PaddingAll15,
-                                        child: CustomImageView(
-                                            svgPath: ImageConstant.imgPlus)),
-                                    GestureDetector(
-                                        onTap: () {
-                                          onTapProfile1();
-                                        },
-                                        child: Card(
-                                            clipBehavior: Clip.antiAlias,
-                                            elevation: 0,
-                                            margin: getMargin(left: 18, top: 1),
-                                            shape: RoundedRectangleBorder(
-                                                side: BorderSide(
-                                                    width:
-                                                        getHorizontalSize(2)),
-                                                borderRadius: BorderRadiusStyle
-                                                    .roundedBorder12),
-                                            child: Container(
-                                                height: getSize(48),
-                                                width: getSize(48),
-                                                padding: getPadding(all: 4),
-                                                decoration: AppDecoration
-                                                    .outline
-                                                    .copyWith(
-                                                        borderRadius:
-                                                            BorderRadiusStyle
-                                                                .roundedBorder12),
-                                                child: Stack(children: [
-                                                  CustomImageView(
-                                                      imagePath: ImageConstant
-                                                          .imgImage40x401,
-                                                      height: getSize(40),
-                                                      width: getSize(40),
-                                                      radius:
-                                                          BorderRadius.circular(
-                                                              getHorizontalSize(
-                                                                  9)),
-                                                      alignment:
-                                                          Alignment.center)
-                                                ])))),
-                                    Card(
-                                        clipBehavior: Clip.antiAlias,
-                                        elevation: 0,
-                                        margin: getMargin(left: 18, top: 1),
-                                        shape: RoundedRectangleBorder(
-                                            side: BorderSide(
-                                                width: getHorizontalSize(2)),
-                                            borderRadius: BorderRadiusStyle
-                                                .roundedBorder12),
-                                        child: Container(
-                                            height: getSize(48),
-                                            width: getSize(48),
-                                            padding: getPadding(all: 4),
-                                            decoration: AppDecoration.outline
-                                                .copyWith(
-                                                    borderRadius:
-                                                        BorderRadiusStyle
-                                                            .roundedBorder12),
-                                            child: Stack(children: [
-                                              CustomImageView(
-                                                  imagePath: ImageConstant
-                                                      .imgImage40x402,
-                                                  height: getSize(40),
-                                                  width: getSize(40),
-                                                  radius: BorderRadius.circular(
-                                                      getHorizontalSize(9)),
-                                                  alignment: Alignment.center)
-                                            ]))),
-                                    Card(
-                                        clipBehavior: Clip.antiAlias,
-                                        elevation: 0,
-                                        margin: getMargin(left: 18, top: 1),
-                                        shape: RoundedRectangleBorder(
-                                            side: BorderSide(
-                                                width: getHorizontalSize(2)),
-                                            borderRadius: BorderRadiusStyle
-                                                .roundedBorder12),
-                                        child: Container(
-                                            height: getSize(48),
-                                            width: getSize(48),
-                                            padding: getPadding(all: 4),
-                                            decoration: AppDecoration.outline
-                                                .copyWith(
-                                                    borderRadius:
-                                                        BorderRadiusStyle
-                                                            .roundedBorder12),
-                                            child: Stack(children: [
-                                              CustomImageView(
-                                                  imagePath: ImageConstant
-                                                      .imgImage40x403,
-                                                  height: getSize(40),
-                                                  width: getSize(40),
-                                                  radius: BorderRadius.circular(
-                                                      getHorizontalSize(9)),
-                                                  alignment: Alignment.center)
-                                            ]))),
-                                    Card(
-                                        clipBehavior: Clip.antiAlias,
-                                        elevation: 0,
-                                        margin: getMargin(left: 18, top: 1),
-                                        shape: RoundedRectangleBorder(
-                                            side: BorderSide(
-                                                color: ColorConstant.gray50033,
-                                                width: getHorizontalSize(2)),
-                                            borderRadius: BorderRadiusStyle
-                                                .roundedBorder12),
-                                        child: Container(
-                                            height: getSize(48),
-                                            width: getSize(48),
-                                            padding: getPadding(all: 4),
-                                            decoration: AppDecoration
-                                                .outlineGray50033
-                                                .copyWith(
-                                                    borderRadius:
-                                                        BorderRadiusStyle
-                                                            .roundedBorder12),
-                                            child: Stack(children: [
-                                              CustomImageView(
-                                                  imagePath: ImageConstant
-                                                      .imgImage40x404,
-                                                  height: getSize(40),
-                                                  width: getSize(40),
-                                                  radius: BorderRadius.circular(
-                                                      getHorizontalSize(9)),
-                                                  alignment: Alignment.center)
-                                            ]))),
-                                    Card(
-                                        clipBehavior: Clip.antiAlias,
-                                        elevation: 0,
-                                        margin: getMargin(left: 18, top: 1),
-                                        shape: RoundedRectangleBorder(
-                                            side: BorderSide(
-                                                width: getHorizontalSize(2)),
-                                            borderRadius: BorderRadiusStyle
-                                                .roundedBorder12),
-                                        child: Container(
-                                            height: getSize(48),
-                                            width: getSize(48),
-                                            padding: getPadding(all: 4),
-                                            decoration: AppDecoration.outline
-                                                .copyWith(
-                                                    borderRadius:
-                                                        BorderRadiusStyle
-                                                            .roundedBorder12),
-                                            child: Stack(children: [
-                                              CustomImageView(
-                                                  imagePath: ImageConstant
-                                                      .imgImage40x405,
-                                                  height: getSize(40),
-                                                  width: getSize(40),
-                                                  radius: BorderRadius.circular(
-                                                      getHorizontalSize(9)),
-                                                  alignment: Alignment.center)
-                                            ])))
-                                  ])))),
-                      Align(
-                          alignment: Alignment.center,
-                          child: Padding(
-                              padding: getPadding(left: 28, top: 36, right: 28),
-                              child: Obx(() => ListView.separated(
-                                  physics: NeverScrollableScrollPhysics(),
-                                  shrinkWrap: true,
-                                  separatorBuilder: (context, index) {
-                                    return SizedBox(
-                                        height: getVerticalSize(18));
-                                  },
-                                  itemCount: controller.homeModelObj.value
-                                      .homeItemList.value.length,
-                                  itemBuilder: (context, index) {
-                                    HomeItemModel model = controller
-                                        .homeModelObj
-                                        .value
-                                        .homeItemList
-                                        .value[index];
-                                    return HomeItemWidget(model);
-                                  }))))
-                    ]))));
+            body: SingleChildScrollView(
+              child: Container(
+                  width: double.maxFinite,
+
+                  child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      mainAxisAlignment: MainAxisAlignment.start,
+                      children: [
+                        Padding(
+                            padding: getPadding(left: 28, top: 16),
+                            child: Text("lbl_featured".tr,
+                                overflow: TextOverflow.ellipsis,
+                                textAlign: TextAlign.left,
+                                style: AppStyle.txtInterBold16)),
+                        Align(
+                            alignment: Alignment.centerRight,
+                            child: SingleChildScrollView(
+                                scrollDirection: Axis.horizontal,
+                                padding: getPadding(left: 28, top: 15),
+                                child: IntrinsicWidth(
+                                    child: Row(
+                                        mainAxisAlignment:
+                                            MainAxisAlignment.center,
+                                        children: [
+                                      CustomIconButton(
+                                          height: 49,
+                                          width: 48,
+                                          variant: IconButtonVariant
+                                              .OutlineBluegray2003f,
+                                          padding: IconButtonPadding.PaddingAll15,
+                                          child: CustomImageView(
+                                              svgPath: ImageConstant.imgPlus)),
+                                      GestureDetector(
+                                          onTap: () {
+                                            onTapProfile1();
+                                          },
+                                          child: Card(
+                                              clipBehavior: Clip.antiAlias,
+                                              elevation: 0,
+                                              margin: getMargin(left: 18, top: 1),
+                                              shape: RoundedRectangleBorder(
+                                                  side: BorderSide(
+                                                      width:
+                                                          getHorizontalSize(2)),
+                                                  borderRadius: BorderRadiusStyle
+                                                      .roundedBorder12),
+                                              child: Container(
+                                                  height: getSize(48),
+                                                  width: getSize(48),
+                                                  padding: getPadding(all: 4),
+                                                  decoration: AppDecoration
+                                                      .outline
+                                                      .copyWith(
+                                                          borderRadius:
+                                                              BorderRadiusStyle
+                                                                  .roundedBorder12),
+                                                  child: Stack(children: [
+                                                    CustomImageView(
+                                                        imagePath: ImageConstant
+                                                            .imgImage40x401,
+                                                        height: getSize(40),
+                                                        width: getSize(40),
+                                                        radius:
+                                                            BorderRadius.circular(
+                                                                getHorizontalSize(
+                                                                    9)),
+                                                        alignment:
+                                                            Alignment.center)
+                                                  ])))),
+                                      Card(
+                                          clipBehavior: Clip.antiAlias,
+                                          elevation: 0,
+                                          margin: getMargin(left: 18, top: 1),
+                                          shape: RoundedRectangleBorder(
+                                              side: BorderSide(
+                                                  width: getHorizontalSize(2)),
+                                              borderRadius: BorderRadiusStyle
+                                                  .roundedBorder12),
+                                          child: Container(
+                                              height: getSize(48),
+                                              width: getSize(48),
+                                              padding: getPadding(all: 4),
+                                              decoration: AppDecoration.outline
+                                                  .copyWith(
+                                                      borderRadius:
+                                                          BorderRadiusStyle
+                                                              .roundedBorder12),
+                                              child: Stack(children: [
+                                                CustomImageView(
+                                                    imagePath: ImageConstant
+                                                        .imgImage40x402,
+                                                    height: getSize(40),
+                                                    width: getSize(40),
+                                                    radius: BorderRadius.circular(
+                                                        getHorizontalSize(9)),
+                                                    alignment: Alignment.center)
+                                              ]))),
+                                      Card(
+                                          clipBehavior: Clip.antiAlias,
+                                          elevation: 0,
+                                          margin: getMargin(left: 18, top: 1),
+                                          shape: RoundedRectangleBorder(
+                                              side: BorderSide(
+                                                  width: getHorizontalSize(2)),
+                                              borderRadius: BorderRadiusStyle
+                                                  .roundedBorder12),
+                                          child: Container(
+                                              height: getSize(48),
+                                              width: getSize(48),
+                                              padding: getPadding(all: 4),
+                                              decoration: AppDecoration.outline
+                                                  .copyWith(
+                                                      borderRadius:
+                                                          BorderRadiusStyle
+                                                              .roundedBorder12),
+                                              child: Stack(children: [
+                                                CustomImageView(
+                                                    imagePath: ImageConstant
+                                                        .imgImage40x403,
+                                                    height: getSize(40),
+                                                    width: getSize(40),
+                                                    radius: BorderRadius.circular(
+                                                        getHorizontalSize(9)),
+                                                    alignment: Alignment.center)
+                                              ]))),
+                                      Card(
+                                          clipBehavior: Clip.antiAlias,
+                                          elevation: 0,
+                                          margin: getMargin(left: 18, top: 1),
+                                          shape: RoundedRectangleBorder(
+                                              side: BorderSide(
+                                                  color: ColorConstant.gray50033,
+                                                  width: getHorizontalSize(2)),
+                                              borderRadius: BorderRadiusStyle
+                                                  .roundedBorder12),
+                                          child: Container(
+                                              height: getSize(48),
+                                              width: getSize(48),
+                                              padding: getPadding(all: 4),
+                                              decoration: AppDecoration
+                                                  .outlineGray50033
+                                                  .copyWith(
+                                                      borderRadius:
+                                                          BorderRadiusStyle
+                                                              .roundedBorder12),
+                                              child: Stack(children: [
+                                                CustomImageView(
+                                                    imagePath: ImageConstant
+                                                        .imgImage40x404,
+                                                    height: getSize(40),
+                                                    width: getSize(40),
+                                                    radius: BorderRadius.circular(
+                                                        getHorizontalSize(9)),
+                                                    alignment: Alignment.center)
+                                              ]))),
+                                      Card(
+                                          clipBehavior: Clip.antiAlias,
+                                          elevation: 0,
+                                          margin: getMargin(left: 18, top: 1),
+                                          shape: RoundedRectangleBorder(
+                                              side: BorderSide(
+                                                  width: getHorizontalSize(2)),
+                                              borderRadius: BorderRadiusStyle
+                                                  .roundedBorder12),
+                                          child: Container(
+                                              height: getSize(48),
+                                              width: getSize(48),
+                                              padding: getPadding(all: 4),
+                                              decoration: AppDecoration.outline
+                                                  .copyWith(
+                                                      borderRadius:
+                                                          BorderRadiusStyle
+                                                              .roundedBorder12),
+                                              child: Stack(children: [
+                                                CustomImageView(
+                                                    imagePath: ImageConstant
+                                                        .imgImage40x405,
+                                                    height: getSize(40),
+                                                    width: getSize(40),
+                                                    radius: BorderRadius.circular(
+                                                        getHorizontalSize(9)),
+                                                    alignment: Alignment.center)
+                                              ])))
+                                    ])))),
+                        Align(
+                            alignment: Alignment.center,
+                            child: Padding(
+                                padding: getPadding(left: 28, top: 36, right: 28),
+                                child: Obx(() => ListView.separated(
+                                    physics: NeverScrollableScrollPhysics(),
+                                    shrinkWrap: true,
+                                    separatorBuilder: (context, index) {
+                                      return SizedBox(
+                                          height: getVerticalSize(18));
+                                    },
+                                    itemCount: controller.homeModelObj.value
+                                        .homeItemList.value.length,
+                                    itemBuilder: (context, index) {
+                                      HomeItemModel model = controller
+                                          .homeModelObj
+                                          .value
+                                          .homeItemList
+                                          .value[index];
+                                      return HomeItemWidget(model);
+                                    }))))
+                      ])),
+            )));
   }
 
   onTapProfile1() {
