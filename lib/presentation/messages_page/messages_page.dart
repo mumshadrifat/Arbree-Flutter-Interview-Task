@@ -17,31 +17,33 @@ class MessagesPage extends StatelessWidget {
             backgroundColor: Colors.transparent,
             body: Container(
                 width: double.maxFinite,
-                child: Column(
-                    mainAxisAlignment: MainAxisAlignment.start,
-                    children: [
-                      Padding(
-                          padding: getPadding(left: 28, top: 31, right: 28),
-                          child: Obx(() => ListView.separated(
-                              physics: NeverScrollableScrollPhysics(),
-                              shrinkWrap: true,
-                              separatorBuilder: (context, index) {
-                                return SizedBox(height: getVerticalSize(28));
-                              },
-                              itemCount: controller.messagesModelObj.value
-                                  .messagesItemList.value.length,
-                              itemBuilder: (context, index) {
-                                MessagesItemModel model = controller
-                                    .messagesModelObj
-                                    .value
-                                    .messagesItemList
-                                    .value[index];
-                                return MessagesItemWidget(model,
-                                    onTapMessage: () {
-                                  onTapMessage();
-                                });
-                              })))
-                    ]))));
+                child: SingleChildScrollView(
+                  child: Column(
+                      mainAxisAlignment: MainAxisAlignment.start,
+                      children: [
+                        Padding(
+                            padding: getPadding(left: 28, top: 31, right: 28),
+                            child: Obx(() => ListView.separated(
+                                physics: NeverScrollableScrollPhysics(),
+                                shrinkWrap: true,
+                                separatorBuilder: (context, index) {
+                                  return SizedBox(height: getVerticalSize(28));
+                                },
+                                itemCount: controller.messagesModelObj.value
+                                    .messagesItemList.value.length,
+                                itemBuilder: (context, index) {
+                                  MessagesItemModel model = controller
+                                      .messagesModelObj
+                                      .value
+                                      .messagesItemList
+                                      .value[index];
+                                  return MessagesItemWidget(model,
+                                      onTapMessage: () {
+                                    onTapMessage();
+                                  });
+                                })))
+                      ]),
+                ))));
   }
 
   onTapMessage() {

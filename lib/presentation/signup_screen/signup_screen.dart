@@ -187,7 +187,7 @@ class SignupScreen extends GetWidget<SignupController> {
                                           CustomTextFormField(
                                               focusNode: FocusNode(),
                                               controller: controller
-                                                  .group2820Controller,
+                                                  .nameController,
                                               hintText: "lbl_enter_name".tr,
                                               margin: getMargin(top: 12),
                                               padding: TextFormFieldPadding
@@ -240,7 +240,7 @@ class SignupScreen extends GetWidget<SignupController> {
                                                 getHorizontalSize(1.0)))),
                                 Obx(() => CustomTextFormField(
                                     focusNode: FocusNode(),
-                                    controller: controller.group2819Controller,
+                                    controller: controller.passwordController,
                                     hintText: "lbl_password_123".tr,
                                     margin: getMargin(top: 12),
                                     textInputAction: TextInputAction.done,
@@ -276,6 +276,7 @@ class SignupScreen extends GetWidget<SignupController> {
                                     fontStyle:
                                         ButtonFontStyle.InterBold14WhiteA700,
                                     onTap: () {
+
                                       onTapCreateanaccountOne();
                                     }),
                                 Align(
@@ -332,9 +333,12 @@ class SignupScreen extends GetWidget<SignupController> {
     });
   }
 
-  onTapCreateanaccountOne() {
-    Get.toNamed(
-      AppRoutes.homeContainerScreen,
+  onTapCreateanaccountOne() async {
+    await controller.saveUserData();
+    Get.snackbar(
+        'Login',
+        'User Already Added',
+        snackPosition: SnackPosition.BOTTOM
     );
   }
 
