@@ -1,4 +1,5 @@
 class User {
+  int? id;
   String? firstName;
   String? lastName;
   String? gender;
@@ -13,6 +14,7 @@ class User {
     gender = json['gender'];
     email = json['email'];
     number = json['number'];
+    id = json['id'];
 
   }
 
@@ -25,6 +27,7 @@ class User {
     data['gender'] = this.gender;
     data['email'] = this.email;
     data['number'] = this.number;
+    data['id'] = this.id;
     return data;
   }
 }

@@ -7,8 +7,6 @@ import 'package:sqflite/sqflite.dart';
 
 import '../models/user_model/user.dart';
 
-
-
 class DataBaseHelper {
   DataBaseHelper._privateConstructor();
 
@@ -29,22 +27,20 @@ class DataBaseHelper {
     return theDb;
   }
 
-
   Future<void> _onCreate(Database db, int version) async {
     await db.execute(
-        'CREATE TABLE user(id INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, firstname TEXT, lastname TEXT,gender Text,email Text,number Text)'
-    );
+        'CREATE TABLE user(id INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, firstname TEXT, lastname TEXT,gender Text,email Text,number Text)');
   }
+
 //insertUser
   Future<int?> insertUser(User user) async {
     Database? db = await instance.database;
     var result = await db?.insert('user', user.toJson());
     //isDataExists(user.name,user.name);
     insId.value = result!;
-     print("Inserted");
+    print("Inserted");
     userList();
     return result;
-
   }
 
 //Display User List
@@ -59,16 +55,24 @@ class DataBaseHelper {
     return result;
   }
 
+  Future<List<Map>> userById(String email) async {
+    Database? db = await instance.database;
 
+    List<Map> result =
+        await db!.rawQuery("SELECT id FROM user where email=?", [email!]);
+
+    result.forEach((row) => print(row));
+
+    print(result);
+    return result;
+  }
 
   Future<int?> isDataExists(String columnName, String value) async {
     Database? db = await instance.database;
-    var res = await db?.rawQuery(
-        "SELECT COUNT(*) FROM user WHERE email = ?", [value]);
+    var res = await db
+        ?.rawQuery("SELECT COUNT(*) FROM user WHERE email = ?", [value]);
     int? count = Sqflite.firstIntValue(res!);
     print("Count >> $count");
     return count;
   }
-
-
 }
