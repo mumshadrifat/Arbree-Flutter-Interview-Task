@@ -279,7 +279,7 @@ class LoginScreen extends GetWidget<LoginController> {
                                                   AppStyle.txtInterRegular14))),
                                   CustomButton(
                                       height: getVerticalSize(58),
-                                      text: "lbl_login".tr,
+                                      text: "Login",
                                       margin: getMargin(top: 19),
                                       variant: ButtonVariant.FillIndigoA200,
                                       shape: ButtonShape.CircleBorder29,
@@ -287,11 +287,12 @@ class LoginScreen extends GetWidget<LoginController> {
                                       fontStyle:
                                           ButtonFontStyle.InterBold14WhiteA700,
                                       onTap: () {
-
-                                        if (_formKey.currentState?.validate() ?? false) {
-
-                                        }
                                         onTapLogin();
+
+                                       // if (_formKey.currentState?.validate() ?? false) {
+
+                                       // }
+
                                       }),
                                   CustomButton(
                                       height: getVerticalSize(58),

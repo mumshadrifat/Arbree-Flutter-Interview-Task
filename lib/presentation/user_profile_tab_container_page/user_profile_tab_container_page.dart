@@ -1,3 +1,5 @@
+import 'package:mumshad_s_application5/presentation/login_screen/controller/login_controller.dart';
+
 import 'controller/user_profile_tab_container_controller.dart';
 import 'models/user_profile_tab_container_model.dart';
 import 'package:flutter/material.dart';
@@ -14,8 +16,11 @@ class UserProfileTabContainerPage extends StatelessWidget {
   UserProfileTabContainerController controller = Get.put(
       UserProfileTabContainerController(UserProfileTabContainerModel().obs));
 
+
+
   @override
   Widget build(BuildContext context) {
+    controller.preloadedData();
     return SafeArea(
         child: Scaffold(
             backgroundColor: ColorConstant.gray100,
@@ -120,32 +125,30 @@ class UserProfileTabContainerPage extends StatelessWidget {
                                                             .circular(
                                                                 getHorizontalSize(
                                                                     20))),
-                                                    Padding(
+                                                    Obx(() => Padding(
                                                         padding:
-                                                            getPadding(top: 9),
+                                                        getPadding(top: 9),
                                                         child: Text(
-                                                            "lbl_edward_ford"
-                                                                .tr,
+                                                            controller.userName.value,
                                                             overflow:
-                                                                TextOverflow
-                                                                    .ellipsis,
+                                                            TextOverflow
+                                                                .ellipsis,
                                                             textAlign:
-                                                                TextAlign.left,
+                                                            TextAlign.left,
                                                             style: AppStyle
-                                                                .txtInterBold22)),
-                                                    Padding(
+                                                                .txtInterBold22))),
+                                                    Obx(() => Padding(
                                                         padding:
-                                                            getPadding(top: 8),
+                                                        getPadding(top: 8),
                                                         child: Text(
-                                                            "lbl_edwardford2"
-                                                                .tr,
+                                                            controller.userEmail.value+"@arbree.com.bd",
                                                             overflow:
-                                                                TextOverflow
-                                                                    .ellipsis,
+                                                            TextOverflow
+                                                                .ellipsis,
                                                             textAlign:
-                                                                TextAlign.left,
+                                                            TextAlign.left,
                                                             style: AppStyle
-                                                                .txtInterRegular14Gray500))
+                                                                .txtInterRegular14Gray500)))
                                                   ]))),
                                       Align(
                                           alignment: Alignment.bottomCenter,
