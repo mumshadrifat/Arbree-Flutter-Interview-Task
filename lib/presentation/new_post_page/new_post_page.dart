@@ -33,18 +33,23 @@ class NewPostPage extends StatelessWidget {
                         textAlign: TextAlign.left,
                         style: AppStyle.txtInterMedium14)),
                 actions: [
-                  CustomButton(
-                      height: getVerticalSize(30),
-                      width: getHorizontalSize(67),
-                      text: "lbl_post".tr,
-                      margin:
-                      getMargin(left: 28, top: 13, right: 28, bottom: 12),
-                      variant: ButtonVariant.FillIndigoA200,
-                      padding: ButtonPadding.PaddingT5_1,
-                      suffixWidget: Container(
-                          margin: getMargin(left: 5),
-                          child: CustomImageView(
-                              svgPath: ImageConstant.imgCheckmark18x18)))
+                  GestureDetector(
+                    onTap: (){
+                      controller.savePostData();
+                    },
+                    child: CustomButton(
+                        height: getVerticalSize(30),
+                        width: getHorizontalSize(67),
+                        text: "lbl_post".tr,
+                        margin:
+                        getMargin(left: 28, top: 13, right: 28, bottom: 12),
+                        variant: ButtonVariant.FillIndigoA200,
+                        padding: ButtonPadding.PaddingT5_1,
+                        suffixWidget: Container(
+                            margin: getMargin(left: 5),
+                            child: CustomImageView(
+                                svgPath: ImageConstant.imgCheckmark18x18))),
+                  )
                 ]),
             body: Container(
                 width: double.maxFinite,

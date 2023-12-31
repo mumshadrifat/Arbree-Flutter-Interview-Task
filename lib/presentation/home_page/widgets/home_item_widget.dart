@@ -5,11 +5,14 @@ import 'package:mumshad_s_application5/core/app_export.dart';
 
 // ignore: must_be_immutable
 class HomeItemWidget extends StatelessWidget {
-  HomeItemWidget(this.homeItemModelObj);
 
-  HomeItemModel homeItemModelObj;
 
-  var controller = Get.find<HomeController>();
+ // HomeItemModel homeItemModelObj;
+  String? userName;
+  String? postDescription;
+  //var controller = Get.find<HomeController>();
+
+  HomeItemWidget({required this.userName});
 
   @override
   Widget build(BuildContext context) {
@@ -57,7 +60,7 @@ class HomeItemWidget extends StatelessWidget {
                       mainAxisAlignment: MainAxisAlignment.start,
                       children: [
                         Text(
-                          "lbl_dustin_houston".tr,
+                          userName!.isEmpty?"":userName!,
                           overflow: TextOverflow.ellipsis,
                           textAlign: TextAlign.left,
                           style: AppStyle.txtInterMedium14Gray900,
@@ -93,7 +96,7 @@ class HomeItemWidget extends StatelessWidget {
                   top: 21,
                 ),
                 child: Text(
-                  "msg_whether_its_a_d".tr,
+                  postDescription!,
                   overflow: TextOverflow.ellipsis,
                   textAlign: TextAlign.left,
                   style: AppStyle.txtInterRegular14Gray500,

@@ -65,8 +65,14 @@ class LoginController extends GetxController {
 
           currentUserName=map['firstname'];
           currentUserEmail=map['email'];
-          print(currentUserEmail);
-          print(currentUserName);
+
+          box.write('current_user',map['id']);
+
+         // print(currentUserEmail);
+         // print(currentUserName);
+         // print(map['id']);
+          //print('Current User');
+         // print(box.read('current_user'));
 
 
 
