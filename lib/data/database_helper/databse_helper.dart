@@ -59,7 +59,7 @@ class DataBaseHelper {
     Database? db = await instance.database;
 
     List<Map> result =
-        await db!.rawQuery("SELECT id FROM user where email=?", [email!]);
+        await db!.rawQuery("SELECT id,firstName,lastName,gender,email,number FROM user where email=?", [email!]);
 
     result.forEach((row) => print(row));
 

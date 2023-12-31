@@ -8,7 +8,7 @@ class User {
 
   User({this.firstName, this.lastName, this.gender, this.number});
 
-  User.fromJson(Map<String, dynamic> json) {
+  User.fromJson(Map<dynamic, dynamic> json) {
     firstName = json['firstName'];
     lastName = json['lastName'];
     gender = json['gender'];
