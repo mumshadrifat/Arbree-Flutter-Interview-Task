@@ -41,7 +41,7 @@ class SignupController extends GetxController {
 
     int? dataExist;
     dataExist = await DataBaseHelper.instance
-        .isDataExists(user.firstName!, user.firstName!);
+        .isDataExists(user.email!, user.email!);
     print("dataExist>$dataExist");
 
     if (dataExist == 0) {
